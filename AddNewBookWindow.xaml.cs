@@ -41,7 +41,7 @@ namespace my_library
             InitializeComponent();
             conn = new NpgsqlConnection(connstring);
             conn.Open();
-            sql = "SELECT genre FROM books;";
+            sql = "SELECT DISTINCT genre FROM books;";
             cmd = new NpgsqlCommand(sql, conn);
             using(NpgsqlDataReader reader = cmd.ExecuteReader())
             {

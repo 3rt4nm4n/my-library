@@ -13,7 +13,7 @@
         <Button x:Name="UnreadBooksButton" Content="Unread Books" HorizontalAlignment="Left" Margin="20,200,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="Orange" Click="UnreadBooksButton_Click"/>
         <Button x:Name="UpdateBookButton" Content="Update Book" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="LightGray" Click="UpdateBookButton_Click"/>
         <Button x:Name="DeleteBookButton" Content="Delete Book" HorizontalAlignment="Left" Margin="20,280,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="IndianRed" Click="DeleteBookButton_Click"/>
-        <DataGrid x:Name="BooksDataGrid" HorizontalAlignment="Left" Height="277" Margin="160,82,0,0" VerticalAlignment="Top" Width="300" MouseDoubleClick="BooksDataGrid_MouseDoubleClick" ItemsSource="{Binding}" ColumnWidth="75">
+        <DataGrid x:Name="BooksDataGrid" HorizontalAlignment="Left" Height="277" Margin="160,82,0,0" VerticalAlignment="Top" Width="300" MouseDoubleClick="BooksDataGrid_MouseDoubleClick" ItemsSource="{Binding}" ColumnWidth="75" SelectedItem="{Binding SelectedItem}">
             
         </DataGrid>
 

@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Npgsql;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace my_library
 {
@@ -29,6 +31,8 @@ namespace my_library
         private DataTable dt;
         public string selected = null;
         public bool check=false;
+        private readonly ICollection<Books> item;
+        private Books selecteditem;
        
         public void Init(string s)
         {
@@ -41,9 +45,20 @@ namespace my_library
             conn.Close();
         }
 
+        public class Books
+        {
+            public string Name
+            {
+                get; set;
+            }
+            
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            this.item = new ObservableCollection<Books>();
+            
             conn = new NpgsqlConnection(connstring);
             try {
                 
@@ -133,6 +148,6 @@ namespace my_library
             
         }
 
-       
+        
     }
 }
