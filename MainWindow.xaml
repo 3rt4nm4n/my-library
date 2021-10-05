@@ -5,16 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:my_library"
         mc:Ignorable="d"
-        Title="My Library" Height="450" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ToolWindow" Icon="C:\Users\nigbu\source\repos\my-library\book.png">
-    <Grid>
+        Title="My Library" Height="450" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Icon="C:\Users\nigbu\source\repos\my-library\book.png" SizeChanged="Window_SizeChanged">
+    <Grid x:Name="myGrid">
         <Button x:Name="AddNewBookButton" Content="Add New Book" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="LightGoldenrodYellow" Click="AddNewBookButton_Click"/>
         <Button x:Name="ReadBooksButton" Content="Read Books" HorizontalAlignment="Left" Margin="20,120,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="LightGreen" Click="ReadBooksButton_Click"/>
         <Button x:Name="ReadingBooksButton" Content="Reading Books" HorizontalAlignment="Left" Margin="20,160,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="LightCyan" Click="ReadingBooksButton_Click"/>
         <Button x:Name="UnreadBooksButton" Content="Unread Books" HorizontalAlignment="Left" Margin="20,200,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="Orange" Click="UnreadBooksButton_Click"/>
         <Button x:Name="UpdateBookButton" Content="Update Book" HorizontalAlignment="Left" Margin="20,240,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="LightGray" Click="UpdateBookButton_Click"/>
         <Button x:Name="DeleteBookButton" Content="Delete Book" HorizontalAlignment="Left" Margin="20,280,0,0" VerticalAlignment="Top" Width="101" Height="22" Background="IndianRed" Click="DeleteBookButton_Click"/>
-        <Image Margin="-1,10,351.6,361.8" Source="my-library.png" Stretch="Fill"/>
-        <DataGrid x:Name="BooksDataGrid" HorizontalAlignment="Left" Height="277" Margin="160,82,0,0" VerticalAlignment="Top" Width="300" MouseDoubleClick="BooksDataGrid_MouseDoubleClick" ItemsSource="{Binding}" ColumnWidth="75" Selected="BooksDataGrid_Selected">
+        <DataGrid x:Name="BooksDataGrid" HorizontalAlignment="Left" Height="277" Margin="160,82,0,0" VerticalAlignment="Top" Width="300" MouseDoubleClick="BooksDataGrid_MouseDoubleClick" ItemsSource="{Binding}" ColumnWidth="75">
             
         </DataGrid>
 

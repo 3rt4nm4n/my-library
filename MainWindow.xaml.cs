@@ -28,7 +28,8 @@ namespace my_library
         string connstring = String.Format(@"Server=localhost;Port=5432;User Id=postgres;Password=password;Database=mylib");
         private DataTable dt;
         public string selected = null;
-
+        public bool check=false;
+       
         public void Init(string s)
         {
             conn.Open();
@@ -55,7 +56,6 @@ namespace my_library
                 MessageBox.Show(ex.Message, "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
                 conn.Close();
             }
-            
         }
 
         private void AddNewBookButton_Click(object sender, RoutedEventArgs e)
@@ -107,5 +107,32 @@ namespace my_library
             selected=BooksDataGrid.SelectedItem.ToString();
 
         }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            myGrid.Width = e.NewSize.Width;
+            myGrid.Height = e.NewSize.Height;
+
+            double xc = 1, yc = 1; //xc = changed width referring to x axis, yc = changed width referring to y axis
+
+            if (e.PreviousSize.Width != 0 && myGrid.Width > 500)
+
+                xc = (e.NewSize.Width / e.PreviousSize.Width);
+
+                
+            if (e.PreviousSize.Height != 0 && myGrid.Height > 450)
+
+                yc = (e.NewSize.Height / e.PreviousSize.Height);
+                
+
+                
+
+            ScaleTransform scale = new ScaleTransform(myGrid.LayoutTransform.Value.M11 * xc, myGrid.LayoutTransform.Value.M22 * yc);
+            myGrid.LayoutTransform = scale;
+            myGrid.UpdateLayout();
+            
+        }
+
+       
     }
 }
