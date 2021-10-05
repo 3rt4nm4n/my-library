@@ -1,0 +1,40 @@
+﻿<Window x:Class="my_library.UpdateBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:my_library"
+        mc:Ignorable="d"
+        Title="Update Book Window" Height="450" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="C:\Users\nigbu\source\repos\my-library\book.png">
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Height="28" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="28" Margin="120,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="20"/>
+
+        <Label Content="Genre" HorizontalAlignment="Left" Margin="25,75,0,0" VerticalAlignment="Top" Height="28" FontSize="15" FontWeight="Bold"/>
+        <ComboBox x:Name="GenreComboBox" HorizontalAlignment="Left" Height="28" Margin="120,75,0,0" VerticalAlignment="Top" Width="160" FontSize="20" IsEditable="True" ItemsSource="{Binding}"/>
+
+        <Label Content="Page" HorizontalAlignment="Left" Margin="25,125,0,0" VerticalAlignment="Top" Height="30" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="PageTextBox" HorizontalAlignment="Left" Height="28" Margin="120,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="20"/>
+
+        <Label Content="A. Name" HorizontalAlignment="Left" Margin="25,175,0,0" VerticalAlignment="Top" Height="30" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="FNameTextBox" HorizontalAlignment="Left" Height="28" Margin="120,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="20"/>
+
+        <Label Content="A. Surname" HorizontalAlignment="Left" Margin="25,225,0,0" VerticalAlignment="Top" Height="30" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="SNameTextBox" HorizontalAlignment="Left" Height="28" Margin="120,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="20"/>
+
+        <Label Content="Publisher" HorizontalAlignment="Left" Margin="25,275,0,0" VerticalAlignment="Top" Height="30" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="PubTextBox" HorizontalAlignment="Left" Height="28" Margin="120,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="20"/>
+
+        <Label Content="Language" HorizontalAlignment="Left" Margin="25,325,0,0" VerticalAlignment="Top" Height="30" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="LangTextBox" HorizontalAlignment="Left" Height="28" Margin="120,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="20"/>
+
+        <Label Content="Status" HorizontalAlignment="Left" Margin="25,375,0,0" VerticalAlignment="Top" Height="28" FontSize="15" FontWeight="Bold"/>
+        <ComboBox x:Name="StatusComboBox" HorizontalAlignment="Left" Height="28" Margin="120,375,0,0" VerticalAlignment="Top" Width="160" FontSize="20">
+            <ComboBoxItem>Read</ComboBoxItem>
+            <ComboBoxItem>Reading</ComboBoxItem>
+            <ComboBoxItem>Unread</ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="365,325,0,0" VerticalAlignment="Top" Width="75" Height="28"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="365,375,0,0" VerticalAlignment="Top" Width="75" Height="28"/>
+    </Grid>
+</Window>
